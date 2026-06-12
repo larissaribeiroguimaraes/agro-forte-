@@ -4,115 +4,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Futuro Sustentável em Equilíbrio</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&family=Roboto:wght@400&display=swap');
-
-    body {
-      margin: 0;
-      height: 100vh;
-      font-family: 'Roboto', sans-serif;
-      background: linear-gradient(135deg, #1d2b64, #f8cdda);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-      color: #ffffff;
-    }
-
-    .container {
-      background: rgba(0, 0, 0, 0.6);
-      padding: 40px;
-      border-radius: 20px;
-      text-align: center;
-      box-shadow: 0 0 30px rgba(0,0,0,0.5);
-      backdrop-filter: blur(10px);
-      width: 90%;
-      max-width: 500px;
-    }
-
-    h1 {
-      font-family: 'Orbitron', sans-serif;
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #00ffcc;
-    }
-
-    input[type="text"] {
-      padding: 12px;
-      width: 80%;
-      border: none;
-      border-radius: 10px;
-      margin-bottom: 15px;
-      font-size: 16px;
-    }
-
-    button {
-      padding: 12px 25px;
-      font-size: 16px;
-      border: none;
-      border-radius: 10px;
-      background: linear-gradient(45deg, #00ffcc, #0099ff);
-      color: white;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    button:hover {
-      transform: scale(1.05);
-    }
-
-    #mensagem {
-      margin-top: 15px;
-      font-weight: bold;
-      display: none;
-      color: #ff4d4d;
-    }
-
-    #conteudo-secreto {
-      margin-top: 20px;
-      display: none;
-      font-size: 18px;
-      line-height: 1.5;
-      color: #00ffcc;
-    }
-
-    /* Fundo animado com círculos flutuantes para efeito futurista */
-    .circle {
-      position: absolute;
-      border-radius: 50%;
-      background: rgba(0, 255, 204, 0.2);
-      animation: float 10s linear infinite;
-    }
-
-    @keyframes float {
-      0% { transform: translateY(100vh) scale(0.5); }
-      50% { transform: translateY(-50vh) scale(1); }
-      100% { transform: translateY(100vh) scale(0.5); }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- Fundo com círculos flutuantes -->
-  <script>
-    for (let i = 0; i < 15; i++) {
-      let circle = document.createElement('div');
-      circle.classList.add('circle');
-      circle.style.width = `${Math.random() * 100 + 50}px`;
-      circle.style.height = circle.style.width;
-      circle.style.left = `${Math.random() * 100}vw`;
-      circle.style.animationDuration = `${Math.random() * 10 + 5}s`;
-      circle.style.opacity = Math.random() * 0.5 + 0.2;
-      document.body.appendChild(circle);
-    }
-  </script>
+  <!-- Fundo com círculos flutuantes será criado via JS -->
 
   <div class="container">
     <h1>Futuro Sustentável em Equilíbrio</h1>
     <p>Digite a chave para desbloquear a visão do nosso planeta equilibrado:</p>
     <input type="text" id="chave" placeholder="Digite a chave">
     <br>
-    <button onclick="verificarChave()">Desbloquear</button>
+    <button id="btn-verificar">Desbloquear</button>
 
     <div id="mensagem"></div>
 
@@ -123,24 +26,6 @@
     </div>
   </div>
 
-  <script>
-    const chaveCorreta = "verde123";
-
-    function verificarChave() {
-      const chaveDigitada = document.getElementById("chave").value;
-      const mensagem = document.getElementById("mensagem");
-      const conteudoSecreto = document.getElementById("conteudo-secreto");
-
-      if (chaveDigitada === chaveCorreta) {
-        mensagem.style.display = "none";
-        conteudoSecreto.style.display = "block";
-      } else {
-        mensagem.style.display = "block";
-        mensagem.textContent = "Chave incorreta! Tente novamente.";
-        conteudoSecreto.style.display = "none";
-      }
-    }
-  </script>
-
+  <script src="script.js"></script>
 </body>
 </html>
